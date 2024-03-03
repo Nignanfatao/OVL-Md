@@ -8,7 +8,7 @@ function repondre(chatId, message) {
 };    
 
 
-bot.onText(/\/eastwhite👤/, (msg) => {
+bot.onText(/\/eastwhite👤/, async (msg) => {
         chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
