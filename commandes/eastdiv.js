@@ -1,5 +1,5 @@
 const { bot } = require('../fonctions');
-const { data } = require('../bdd/eastdiv');
+const { getData } = require('../bdd/eastdiv');
 
 let ChatID;
 
