@@ -48,7 +48,7 @@ bot.onText(/\/eastwhite👤/, (msg) => {
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
         bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: msg });
           } else {
-        if (superUser) { 
+       // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -120,7 +120,7 @@ bot.onText(/\/eastwhite👤/, (msg) => {
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+      //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
