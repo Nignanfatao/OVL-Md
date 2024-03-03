@@ -1,8 +1,17 @@
 const { bot } = require('../fonctions');
-    
+const { data } = require('../bdd/eastdiv');
+
+let ChatID;
+
+function repondre(chatId, message) {
+    bot.sendMessage(chatId, message);
+};    
+
+
 bot.onText(/\/eastwhite👤/, (msg) => {
-        const chatId = msg.chat.id;
-        const nomAuteurMessage = msg.from.first_name
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
 
   try {
       const data = await getData('1');
@@ -37,8 +46,9 @@ bot.onText(/\/eastwhite👤/, (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302242.jpg' }, caption: mesg }, { quoted: ms });
-       } else {
+          function image(chatId, imageUrl, caption) {
+    bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: msg });
+          } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
