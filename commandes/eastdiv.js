@@ -88,7 +88,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(chatId, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -100,7 +100,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-            repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+            repondre(chatId, `Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -111,14 +111,14 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-             repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+             repondre(chatId, `Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatId, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(chatId, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
