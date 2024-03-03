@@ -22,30 +22,30 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
         bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: mesg });
           } else {
        // if (superUser) { 
@@ -100,7 +100,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-            repondre(chatId, `Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+            repondre(chatId, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -111,7 +111,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-             repondre(chatId, `Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+             repondre(chatId, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
             repondre(chatId, `Une erreur est survenue. Veuillez entrer correctement les données.`);
