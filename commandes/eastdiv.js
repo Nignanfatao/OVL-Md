@@ -1,12 +1,10 @@
-zokou(
-  {
-    nomCom: 'eastwhite👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
+const { bot } = require('../fonctions');
+    
+bot.onText(/\/eastwhite👤/, (msg) => {
+        const chatId = msg.chat.id;
+        const nomAuteurMessage = msg.from.first_name
 
-    try {
+  try {
       const data = await getData('1');
       let joueur = arg[1];
       let object = arg[3];
