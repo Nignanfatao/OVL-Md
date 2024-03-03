@@ -46,8 +46,7 @@ bot.onText(/\/eastwhite👤/, (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-          function image(chatId, imageUrl, caption) {
-    bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: msg });
+        bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: msg });
           } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -98,10 +97,10 @@ bot.onText(/\/eastwhite👤/, (msg) => {
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
             const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 1`;
-            await client.query(query);
+            client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+            repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -109,10 +108,10 @@ bot.onText(/\/eastwhite👤/, (msg) => {
             WHERE id = 1
             `;
 
-            await client.query(query, [texte]);
+            client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+             repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
             repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
