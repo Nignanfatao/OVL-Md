@@ -1,8 +1,8 @@
 const { bot } = require('../fonctions');
 const { getData } = require('../bdd/eastdiv');
 
-function repondre(hatId, message) {
-    bot.sendMessage(hatId, message);
+function repondre(chatId, message) {
+    bot.sendMessage(chatId, message);
 };    
 
 
