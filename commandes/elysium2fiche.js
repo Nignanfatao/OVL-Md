@@ -1,10 +1,9 @@
 const { zokou } = require('../framework/zokou');
-const { getData } = require('../bdd/eastdiv');
-
+const { getData } = require('../bdd/elysium2fiche');
 
 zokou(
   {
-    nomCom: 'eastwhite👤',
+    nomCom: 'kemael',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -19,31 +18,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: KAROSU🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302242.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/4aac7ca1bb98da8c5a3bc.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -61,26 +58,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "White":
+         switch (joueur) {
+    case "Kemael":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -93,14 +87,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 1`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 1`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 1
             `;
@@ -129,7 +123,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
 
 zokou(
   {
-    nomCom: 'eastkemael👤',
+    nomCom: 'abdiel',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -144,31 +138,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: JONES🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1eba1.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c4fb6d4b7e85a5b02fe32.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -186,26 +178,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Kemael":
+         switch (joueur) {
+    case "Abdiel":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -218,14 +207,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 2`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 2`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 2
             `;
@@ -254,7 +243,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
 
 zokou(
   {
-    nomCom: 'eastaltheos👤',
+    nomCom: 'goldy',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -269,31 +258,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: David G. STORM🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105e0d.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9489041b40152020e3bda.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -311,26 +298,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Altheos":
+         switch (joueur) {
+    case "Goldy":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -343,14 +327,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 3`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 3`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 3
             `;
@@ -379,7 +363,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
 
 zokou(
   {
-    nomCom: 'eastgoldy👤',
+    nomCom: 'aether',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -394,31 +378,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: ÆTHER🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a29540b.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/11c0fdd7da811dc6f5b82.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -436,26 +418,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a295
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Goldy":
+         switch (joueur) {
+    case "Aether":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -468,14 +447,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a295
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 4`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 4`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 4
             `;
@@ -504,7 +483,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a295
 
 zokou(
   {
-    nomCom: 'eastzephyr👤',
+    nomCom: 'solomoe',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -519,31 +498,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: Scarlet KING🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d784.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/79bacf19ff0818e4b7ad4.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -561,26 +538,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Zephyr":
+         switch (joueur) {
+    case "SoloMoe":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -593,14 +567,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 5`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 5`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 5
             `;
@@ -629,7 +603,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
 
 zokou(
   {
-    nomCom: 'eastatsushi👤',
+    nomCom: 'thanatos',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -644,31 +618,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: SWAT🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d59a7.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5fa2936d44020e96bcbd1.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -686,26 +658,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Atsushi":
+         switch (joueur) {
+    case "Thanatos":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -718,14 +687,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 6`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 6`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 6
             `;
@@ -754,7 +723,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
 
 zokou(
   {
-    nomCom: 'eastadam👤',
+    nomCom: 'damian',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -769,31 +738,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: Death MINDER🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f5470bf.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/63cd5e5aa16fc17702b35.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -811,26 +778,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Adam":
+         switch (joueur) {
+    case "Damian":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -843,14 +807,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 7`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 7`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 7
             `;
@@ -879,7 +843,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
 
 zokou(
   {
-    nomCom: 'eastserena👤',
+    nomCom: 'yûblasq',
     categorie: 'NEOverse'
   },
   async (dest, zk, commandeOptions) => {
@@ -894,31 +858,29 @@ zokou(
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+⬕ *🎮Pseudo*: Yû BLASQ🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
 ░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
-░░░░░░░░░░░░░░░░░░░
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4fa53.jpg' }, caption: mesg }, { quoted: ms });
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/f1def400cf130e8d72408.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -936,26 +898,23 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
         if (arg[0] === 'joueur:') {
           let colonnesJoueur;
           
-          switch (joueur) {
-    case "Serena":
+         switch (joueur) {
+    case "Yû":
       colonnesJoueur = {
-        pseudo: "e1",
-        division: "e2",
-        classe: "e3",
-        rang_exp: "e4",
-        golds: "e5",
-        neocoins: "e6",
-        gift_box: "e7",
-        coupons: "e8",
-        neopass: "e9",
-        talent: "e10",
-        note: "e11",
-        victoires: "e12",
-        defaites: "e13",
-        trophees: "e14",
-        tos: "e15",
-        awards: "e16",
-        cards: "e17",
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
       };
         break;
           default:
@@ -968,16 +927,136 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
         const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
 
           if (colonneObjet && (signe === '+' || signe === '-')) {
-            const query = `UPDATE eastdiv SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 8`;
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 8`;
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
-            UPDATE eastdiv
+            UPDATE elysium2fiche
             SET ${colonneObjet} = $1
             WHERE id = 8
+            `;
+
+            await client.query(query, [texte]);
+
+            console.log(`données du joueur: ${joueur} mise à jour`);
+            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+          } else {
+            console.log("Nom d'objet non reconnu ou signe invalide.");
+            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+          }
+        } else {
+          console.log("Le message ne correspond pas au format attendu.");
+          repondre(`Le format du message est incorrect.`);
+        } 
+        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+       
+
+        client.release();
+      }
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour des données de l'utilisateur:", error);
+    }
+  });
+
+zokou(
+  {
+    nomCom: 'lord',
+    categorie: 'NEOverse'
+  },
+  async (dest, zk, commandeOptions) => {
+    const { ms, repondre, arg, superUser } = commandeOptions;
+
+    try {
+      const data = await getData('9');
+      let joueur = arg[1];
+      let object = arg[3];
+      let signe = arg[4];
+      let valeur = arg[5];
+      let texte = arg.slice(5).join(' ');
+
+      if (!arg || arg.length === 0) {
+        let mesg = `*💠Ξ𝗟𝗬𝗦𝗜𝗨𝗠𝟮𝟭𝟲𝟮*
+░░░░░░░░░░░░░░░░░░░
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+⬕ *🎮Pseudo*: The LOA🥉
+⬕ *👤User*: ${data.e1}
+⬕ *🌐Cyber capacité*: ${data.e2}
+⬕ *💠Ξcoins*: ${data.e3}💠
+⬕ *🌟SP*: ${data.e4}
+⬕ *🎮Game Pass*: ${data.e5} *EP*
+═══════════
+         *◢❮❮❮ 🌐𝗦𝗞𝗜𝗟𝗟𝗦🌐 ❯❯❯❯◣*
+ *⬕🌍Exploration🥉*: ${data.e6}    *⚙️Crafting🥉*: ${data.e7}
+ *👊🏼Combat🥉*: ${data.e8}       *🛞Conduite🥉*: ${data.e9}
+
+          *◢❮❮❮ 🌐𝗦𝗧𝗔𝗧𝗦🌐 ❯❯❯❯◣*
+🙂: ${data.e10}%  ❤️: ${data.e11}% 💠: ${data.e12}% 🫀: ${data.e13}%
+═══════════
+*🎒𝗜𝗻𝘃𝗲𝗻𝘁𝗮𝗶𝗿𝗲:(7Max)*
+▪${data.e14}
+
+░░░░░░░░░░░░░░░░░░░
+▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔     *⏧⎔𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗜𝗻 𝗣𝗿𝗼𝗰𝗲𝘀𝘀♻️...*`;
+zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/64887cc915c2ac1c92df1.jpg' }, caption: mesg }, { quoted: ms });
+       } else {
+        if (superUser) { 
+        const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
+        const proConfig = {
+          connectionString: dbUrl,
+          ssl: {
+            rejectUnauthorized: false,
+          },
+        };
+
+        const { Pool } = require('pg');
+        const pool = new Pool(proConfig);
+        const client = await pool.connect();
+
+        if (arg[0] === 'joueur:') {
+          let colonnesJoueur;
+          
+         switch (joueur) {
+    case "Lord":
+      colonnesJoueur = {
+        user: "e1",
+        capacité: "e2",
+        ecoins: "e3",
+        sp: "e4",
+        game_pass: "e5",
+        exploration: "e6",
+        crafting: "e7",
+        combat: "e8",
+        conduite: "e9",
+        moral: "e10",
+        life: "e11",
+        voïd: "e12",
+        sta: "e13",
+        inventaire: "e14",
+      };
+        break;
+          default:
+      console.log("Nom de joueur non reconnu.");
+              repondre(`joueur: ${joueur} non reconnu`);
+              return; 
+        }
+          
+        const colonneObjet = colonnesJoueur[object];
+        const solde = `${data[colonneObjet]} ${signe} ${valeur}`;
+
+          if (colonneObjet && (signe === '+' || signe === '-')) {
+            const query = `UPDATE elysium2fiche SET ${colonneObjet} = ${data[colonneObjet]} ${signe} ${valeur} WHERE id = 9`;
+            await client.query(query);
+
+            console.log(`Données de l'utilisateur ${joueur} mises à jour`);
+           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+          } else if (colonneObjet && signe === '=') {
+            const query = `
+            UPDATE elysium2fiche
+            SET ${colonneObjet} = $1
+            WHERE id = 9
             `;
 
             await client.query(query, [texte]);
