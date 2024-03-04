@@ -1,16 +1,19 @@
-const { zokou } = require('../framework/zokou');
+const { bot } = require('../fonctions');
 const { getData } = require('../bdd/eastdiv');
 
+let ChatID;
 
-zokou(
-  {
-    nomCom: 'eastwhite👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
+function repondre(chatId, message) {
+    bot.sendMessage(chatId, message);
+};    
 
-    try {
+
+bot.onText(/\/eastwhite👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+ 
+  try {
       const data = await getData('1');
       let joueur = arg[1];
       let object = arg[3];
@@ -45,7 +48,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302242.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+       // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -117,7 +120,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+      //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -127,14 +130,12 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastkemael👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
 
+bot.onText(/\/eastkemael👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+ 
     try {
       const data = await getData('2');
       let joueur = arg[1];
@@ -170,7 +171,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1eba1.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+      //  if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -242,7 +243,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+     //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -252,15 +253,12 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastaltheos👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
-
-    try {
+bot.onText(/\/eastaltheos👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+ 
+ try {
       const data = await getData('3');
       let joueur = arg[1];
       let object = arg[3];
@@ -295,7 +293,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105e0d.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+        //if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -367,7 +365,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+        //} else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -377,15 +375,13 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastgoldy👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
 
-    try {
+bot.onText(/\/eastgoldy👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+ 
+try {
       const data = await getData('4');
       let joueur = arg[1];
       let object = arg[3];
@@ -420,7 +416,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a29540b.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+       // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -492,7 +488,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a295
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+       // } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
