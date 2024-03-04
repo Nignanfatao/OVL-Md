@@ -3,8 +3,8 @@ const { getData } = require('../bdd/eastdiv');
 
 let ChatID;
 
-function repondre(chatId, message) {
-    bot.sendMessage(chatId, message);
+function repondre(ChatId, message) {
+    bot.sendMessage(ChatId, message);
 };    
 
 
