@@ -512,30 +512,30 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦     
  *📊Note Saison passée: ${data.e11}⏫*
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d784.jpg' }, caption: mesg }, { quoted: ms });
        } else {
      //   if (superUser) { 
@@ -578,7 +578,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -590,7 +590,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -601,14 +601,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -633,30 +633,30 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d59a7.jpg' }, caption: mesg }, { quoted: ms });
        } else {
        // if (superUser) { 
@@ -699,7 +699,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -711,7 +711,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -722,14 +722,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -754,25 +754,25 @@ bot.onText(/\/eastadam👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
 *🎴Cards(20 max)*: ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
@@ -820,7 +820,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -832,7 +832,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -843,14 +843,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
      //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -876,30 +876,30 @@ bot.onText(/\/eastserena👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4fa53.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         //if (superUser) { 
@@ -942,7 +942,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -954,7 +954,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -965,14 +965,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
