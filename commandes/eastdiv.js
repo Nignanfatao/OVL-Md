@@ -46,7 +46,8 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302242.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/5c45243eab76575302242.jpg', { caption: mesg });
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
        // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -169,7 +170,9 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1eba1.jpg' }, caption: mesg }, { quoted: ms });
+         bot.sendPhoto(chatId, 'https://telegra.ph/file/9a7dacbf03cd0bce1eba1.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
       //  if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -291,7 +294,9 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105e0d.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/a20053d0819eebc105e0d.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
         //if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -414,7 +419,9 @@ try {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a29540b.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/006c4bca1e4855a29540b.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a29540b.jpg' }, caption: mesg }, { quoted: ms });
        } else {
        // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -536,7 +543,9 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d784.jpg' }, caption: mesg }, { quoted: ms });
+         bot.sendPhoto(chatId, 'https://telegra.ph/file/390445d01cddc9333d784.jpg', { caption: mesg });
+  
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
      //   if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -657,7 +666,9 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d59a7.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/166b853bf0aa7c18d59a7.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
        // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -778,7 +789,9 @@ bot.onText(/\/eastadam👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f5470bf.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/c3ce36d0679e42f5470bf.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
       //  if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
@@ -900,7 +913,9 @@ bot.onText(/\/eastserena👤/, async (msg) => {
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
     🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
-zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4fa53.jpg' }, caption: mesg }, { quoted: ms });
+          bot.sendPhoto(chatId, 'https://telegra.ph/file/bb62d42a8ef4d79d4fa53.jpg', { caption: mesg });
+ 
+//zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
        } else {
         //if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
