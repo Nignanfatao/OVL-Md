@@ -22,30 +22,30 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
 *❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302242.jpg' }, caption: mesg }, { quoted: ms });
        } else {
        // if (superUser) { 
@@ -88,7 +88,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -100,7 +100,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -111,14 +111,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/5c45243eab76575302
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -145,30 +145,30 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                      
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1eba1.jpg' }, caption: mesg }, { quoted: ms });
        } else {
       //  if (superUser) { 
@@ -211,7 +211,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -223,7 +223,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -234,14 +234,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/9a7dacbf03cd0bce1e
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
      //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -267,30 +267,30 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
       let texte = arg.slice(5).join(' ');
 
       if (!arg || arg.length === 0) {
-        let mesg = `*🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟*
+        let mesg = `🔷𝗡Ξ𝗢 𝗔𝗟𝗟 𝗦𝗧𝗔𝗥𝗦🌟
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-◇ *Pseudo👤*: ${data.e1}
-◇ *Division🛡️*: ${data.e2}
-◇ *Classe🏆*: ${data.e3}
-◇ *Rang XP🔰*: ${data.e4}
-◇ *Golds🧭*: ${data.e5}🧭
-◇ *NΞOcoins🔹*: ${data.e6}🔷
-◇ *Gift Box🎁*: ${data.e7}🎁
-◇ *Coupons🎟*: ${data.e8}🎟
-◇ *NΞO PASS🔸*: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
- *🧠Talent RP(𝗤𝗶): ${data.e10}⛦*                       
- *📊Note Saison passée: ${data.e11}⏫*
+◇ Pseudo👤: ${data.e1}
+◇ Division🛡️: ${data.e2}
+◇ Classe🏆: ${data.e3}
+◇ Rang XP🔰: ${data.e4}
+◇ Golds🧭: ${data.e5}🧭
+◇ NΞOcoins🔹: ${data.e6}🔷
+◇ Gift Box🎁: ${data.e7}🎁
+◇ Coupons🎟: ${data.e8}🎟
+◇ NΞO PASS🔸: ${data.e9}🔸
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 🧠Talent RP(𝗤𝗶): ${data.e10}⛦                      
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*✭Records*: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
-*🏆Trophées*: ${data.e14}  *🌟 TOS*: ${data.e15}  *💫Awards*: ${data.e16}
+✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
+🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105e0d.jpg' }, caption: mesg }, { quoted: ms });
        } else {
         //if (superUser) { 
@@ -333,7 +333,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(`joueur: ${joueur} non reconnu`);
+              repondre(ChatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -345,7 +345,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${signe}${valeur}\n*NOUVEAU SOLDE*: ${solde}`);
+           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -356,14 +356,14 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/a20053d0819eebc105
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(`Données du joueur mises à jour\n👤 *JOUEUR*: ${joueur}\n⚙ *OBJECT*: ${object}\n💵 *VALEUR*: ${texte} \n *NOUVELLE DONNÉE*: ${texte}`);
+            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(`Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(`Le format du message est incorrect.`);
+          repondre(ChatID, `Le format du message est incorrect.`);
         } 
         //} else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -498,15 +498,12 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/006c4bca1e4855a295
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastzephyr👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
-
-    try {
+bot.onText(/\/eastzephyr👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+ 
+  try {
       const data = await getData('5');
       let joueur = arg[1];
       let object = arg[3];
@@ -541,7 +538,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d784.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+     //   if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -613,7 +610,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+      //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -623,15 +620,11 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/390445d01cddc9333d
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastatsushi👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
-
-    try {
+bot.onText(/\/eastatsushi👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+   try {
       const data = await getData('6');
       let joueur = arg[1];
       let object = arg[3];
@@ -666,7 +659,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d59a7.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+       // if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -738,7 +731,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+      //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -748,15 +741,11 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/166b853bf0aa7c18d5
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastadam👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
-
-    try {
+bot.onText(/\/eastadam👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
+   try {
       const data = await getData('7');
       let joueur = arg[1];
       let object = arg[3];
@@ -791,7 +780,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f5470bf.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+      //  if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -863,7 +852,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+     //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
@@ -873,13 +862,10 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/c3ce36d0679e42f547
     }
   });
 
-zokou(
-  {
-    nomCom: 'eastserena👤',
-    categorie: 'NEOverse'
-  },
-  async (dest, zk, commandeOptions) => {
-    const { ms, repondre, arg, superUser } = commandeOptions;
+bot.onText(/\/eastserena👤/, async (msg) => {
+        chatId = msg.chat.id; 
+       const arg = msg.text.split(' ').slice(1);
+       const nomAuteurMessage = msg.from.first_name;
 
     try {
       const data = await getData('8');
@@ -916,7 +902,7 @@ zokou(
     *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
 zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4fa53.jpg' }, caption: mesg }, { quoted: ms });
        } else {
-        if (superUser) { 
+        //if (superUser) { 
         const dbUrl = "postgres://fatao:Kuz6KQRpz3S1swoTQTv1WOG8SPfSCppB@dpg-cmnlnkol5elc738lrj2g-a.oregon-postgres.render.com/cy";
         const proConfig = {
           connectionString: dbUrl,
@@ -988,7 +974,7 @@ zk.sendMessage(dest, { image: { url: 'https://telegra.ph/file/bb62d42a8ef4d79d4f
           console.log("Le message ne correspond pas au format attendu.");
           repondre(`Le format du message est incorrect.`);
         } 
-        } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
+      //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
 
         client.release();
