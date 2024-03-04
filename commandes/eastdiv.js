@@ -1,7 +1,7 @@
 const { bot } = require('../fonctions');
 const { getData } = require('../bdd/eastdiv');
 
-let ChatID;
+let chatID;
 
 function repondre(ChatId, message) {
     bot.sendMessage(ChatId, message);
@@ -9,7 +9,7 @@ function repondre(ChatId, message) {
 
 
 bot.onText(/\/eastwhite👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -34,7 +34,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
 ◇ Gift Box🎁: ${data.e7}🎁
 ◇ Coupons🎟: ${data.e8}🎟
 ◇ NΞO PASS🔸: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
  🧠Talent RP(𝗤𝗶): ${data.e10}⛦                       
  📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
@@ -89,7 +89,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -101,7 +101,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -112,14 +112,14 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -133,7 +133,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
 
 
 bot.onText(/\/eastkemael👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -214,7 +214,7 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -226,7 +226,7 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -237,14 +237,14 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
      //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -257,7 +257,7 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
   });
 
 bot.onText(/\/eastaltheos👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -338,7 +338,7 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -350,7 +350,7 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -361,10 +361,10 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
@@ -382,7 +382,7 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
 
 
 bot.onText(/\/eastgoldy👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -407,7 +407,7 @@ try {
 ◇ Gift Box🎁: ${data.e7}🎁
 ◇ Coupons🎟: ${data.e8}🎟
 ◇ NΞO PASS🔸: ${data.e9}🔸
-*❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓*
+❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
  🧠Talent RP(𝗤𝗶): ${data.e10}⛦                      
  📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
@@ -463,7 +463,7 @@ try {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -475,7 +475,7 @@ try {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -486,14 +486,14 @@ try {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
        // } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -506,7 +506,7 @@ try {
   });
 
 bot.onText(/\/eastzephyr👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -533,7 +533,7 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
 ◇ NΞO PASS🔸: ${data.e9}🔸
 ❯❯▓▓▓▓▓▓▓▓▓▓▓▓▓▓
  🧠Talent RP(𝗤𝗶): ${data.e10}⛦     
- *📊Note Saison passée: ${data.e11}⏫*
+ 📊Note Saison passée: ${data.e11}⏫
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
 ✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
@@ -599,7 +599,7 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -610,14 +610,14 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -630,7 +630,7 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
   });
 
 bot.onText(/\/eastatsushi👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
    try {
@@ -710,7 +710,7 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -722,7 +722,7 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -733,14 +733,14 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -753,7 +753,7 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
   });
 
 bot.onText(/\/eastadam👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
    try {
@@ -785,10 +785,10 @@ bot.onText(/\/eastadam👤/, async (msg) => {
 ✭Records: ${data.e12} Victoires✅/ ${data.e13} Défaites❌
 🏆Trophées: ${data.e14}  🌟 TOS: ${data.e15}  💫Awards: ${data.e16}
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-*🎴Cards(20 max)*: ${data.e17} 
+🎴Cards(20 max): ${data.e17} 
 ░░░░░░░░░░░░░░░░░░░
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-    *🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝*`;
+    🔷𝗡Ξ𝗢 SUPERLEAGUE🏆🔝`;
           bot.sendPhoto(chatId, 'https://telegra.ph/file/c3ce36d0679e42f5470bf.jpg', { caption: mesg });
  
 //zk.sendMessage(dest, { image: { url: '' }, caption: mesg }, { quoted: ms });
@@ -833,7 +833,7 @@ bot.onText(/\/eastadam👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -845,7 +845,7 @@ bot.onText(/\/eastadam👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -856,14 +856,14 @@ bot.onText(/\/eastadam👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
      //   } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
@@ -876,7 +876,7 @@ bot.onText(/\/eastadam👤/, async (msg) => {
   });
 
 bot.onText(/\/eastserena👤/, async (msg) => {
-        ChatId = msg.chat.id; 
+        chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
 
@@ -957,7 +957,7 @@ bot.onText(/\/eastserena👤/, async (msg) => {
         break;
           default:
       console.log("Nom de joueur non reconnu.");
-              repondre(ChatID, `joueur: ${joueur} non reconnu`);
+              repondre(chatID, `joueur: ${joueur} non reconnu`);
               return; 
         }
           
@@ -969,7 +969,7 @@ bot.onText(/\/eastserena👤/, async (msg) => {
             await client.query(query);
 
             console.log(`Données de l'utilisateur ${joueur} mises à jour`);
-           await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
+           await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${signe}${valeur}\nNOUVEAU SOLDE: ${solde}`);
           } else if (colonneObjet && signe === '=') {
             const query = `
             UPDATE eastdiv
@@ -980,14 +980,14 @@ bot.onText(/\/eastserena👤/, async (msg) => {
             await client.query(query, [texte]);
 
             console.log(`données du joueur: ${joueur} mise à jour`);
-            await repondre(ChatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
+            await repondre(chatID, `Données du joueur mises à jour\n👤 JOUEUR: ${joueur}\n⚙ OBJECT: ${object}\n💵 VALEUR: ${texte} \n NOUVELLE DONNÉE: ${texte}`);
           } else {
             console.log("Nom d'objet non reconnu ou signe invalide.");
-            repondre(ChatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
+            repondre(chatID, `Une erreur est survenue. Veuillez entrer correctement les données.`);
           }
         } else {
           console.log("Le message ne correspond pas au format attendu.");
-          repondre(ChatID, `Le format du message est incorrect.`);
+          repondre(chatID, `Le format du message est incorrect.`);
         } 
       //  } else { repondre('Seul les Membres de la NS ont le droit de modifier cette fiche');}
        
