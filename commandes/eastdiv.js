@@ -1,15 +1,13 @@
 const { bot } = require('../fonctions');
 const { getData } = require('../bdd/eastdiv');
 
-let chatID;
-
-function repondre(ChatId, message) {
-    bot.sendMessage(ChatId, message);
+function repondre(hatId, message) {
+    bot.sendMessage(hatId, message);
 };    
 
 
 bot.onText(/\/eastwhite👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -133,7 +131,7 @@ bot.onText(/\/eastwhite👤/, async (msg) => {
 
 
 bot.onText(/\/eastkemael👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -257,7 +255,7 @@ bot.onText(/\/eastkemael👤/, async (msg) => {
   });
 
 bot.onText(/\/eastaltheos👤/, async (msg) => {
-        chatId = msg.chat.id; 
+        let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -382,7 +380,7 @@ bot.onText(/\/eastaltheos👤/, async (msg) => {
 
 
 bot.onText(/\/eastgoldy👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -506,7 +504,7 @@ try {
   });
 
 bot.onText(/\/eastzephyr👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
  
@@ -630,7 +628,7 @@ bot.onText(/\/eastzephyr👤/, async (msg) => {
   });
 
 bot.onText(/\/eastatsushi👤/, async (msg) => {
-        chatId = msg.chat.id; 
+      let  chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
    try {
@@ -753,7 +751,7 @@ bot.onText(/\/eastatsushi👤/, async (msg) => {
   });
 
 bot.onText(/\/eastadam👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
    try {
@@ -876,7 +874,7 @@ bot.onText(/\/eastadam👤/, async (msg) => {
   });
 
 bot.onText(/\/eastserena👤/, async (msg) => {
-        chatId = msg.chat.id; 
+       let chatId = msg.chat.id; 
        const arg = msg.text.split(' ').slice(1);
        const nomAuteurMessage = msg.from.first_name;
 
